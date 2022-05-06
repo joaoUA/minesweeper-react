@@ -1,0 +1,182 @@
+//color palette
+$bg-color: #f1faee;
+
+$cell-base-color: #1d3557;
+$cell-faceup-color: #f1faee;
+//$cell-hover-color: hsl(20, 99%, 44%);
+$cell-border-color: #1d3557;
+$cell-text-color: #457b9d;
+$board-border-color: #1d3557;
+$text-color: white;
+
+//Variables
+$border-roundness: 4px;
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: $bg-color;
+}
+
+.match-title{
+	text-transform: uppercase;
+	color: $cell-faceup-color;
+}
+
+.board{
+	display: grid;
+	margin:auto;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(10,1fr);
+	gap: 2px;
+	max-width: fit-content;
+	border: 1px solid $board-border-color;
+	border-radius: 4px;
+	padding:1px;
+	background-color: $cell-base-color;
+}
+
+h1{
+	background-color: $cell-base-color;
+	text-align: center;
+	padding: 0.5em;
+}
+
+.cell{
+	width: 40px;
+	height:40px;
+	background-color: $cell-base-color;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	line-height: 40px;
+
+	&:hover{
+		border: 1px solid $cell-border-color;
+		cursor: pointer;
+	}
+
+	p{
+		font-weight: bold;
+		color: $cell-text-color;
+	}
+}
+
+.cell-revealed{
+	border-radius: 2px;
+	background-color: $cell-faceup-color;
+
+	&:hover{
+		border: none;
+	}
+}
+
+//Buttons
+.btn{
+	height: 2.2rem;
+	padding: 0 2rem;
+
+	background-color: $cell-base-color;
+	border: none;
+	outline: none;
+	border-radius: $border-roundness;
+	color: $cell-faceup-color;
+
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+
+//Timer
+.timer{
+	min-width: fit-content;
+	height: 2.2rem;
+	padding: 0 2rem;
+	background-color: $cell-text-color;
+	line-height: 2.2rem;
+	border-radius: $border-roundness;
+	color: $cell-faceup-color;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+//Options
+.options-text {
+	font-family: -apple-system,
+BlinkMacSystemFont,
+'Segoe UI',
+'Roboto',
+'Oxygen',
+'Ubuntu',
+'Cantarell',
+'Fira Sans',
+'Droid Sans',
+'Helvetica Neue',
+sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	letter-spacing: 2px;
+}
+.options-container{
+	margin: 1em auto;
+	width: calc(10 * (40px + 2px));
+	display: flex;
+	justify-content: space-between;
+	align-self: center;
+}
+
+.flag{
+	color: $cell-faceup-color;
+	font-size: 0.8em;
+}
+
+//Cells
+.cell-0{
+	color: lighten($cell-base-color, 60);
+}.cell-1 {
+	color: lighten($cell-base-color, 40);
+}.cell-2 {
+	color: lighten($cell-base-color, 30);
+}.cell-3 {
+	color: lighten($cell-base-color, 20);
+}.cell-4 {
+	color: lighten($cell-base-color, 10);
+}.cell-5 {
+	color: lighten($cell-base-color, 00);
+}.cell-6 {
+	color: lighten($cell-base-color, 00);
+}.cell-7 {
+	color: lighten($cell-base-color, 00);
+}.cell-8 {
+	color: lighten($cell-base-color, 00);
+}
+
+.result-text{
+	width: fit-content;
+	margin: 1em auto;
+	padding: 8px 1.5em;
+	text-align: center;
+	font-size: 1em;
+	background-color: $cell-base-color;
+	color: $bg-color;
+	font-weight: bold;
+	border-radius: $border-roundness;
+	text-transform: capitalize;
+}
